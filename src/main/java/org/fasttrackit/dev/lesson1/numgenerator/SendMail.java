@@ -5,6 +5,8 @@ package org.fasttrackit.dev.lesson1.numgenerator;
         import javax.mail.internet.InternetAddress;
         import javax.mail.internet.MimeMessage;
         import java.util.Properties;
+        import java.util.logging.Level;
+        import java.util.logging.Logger;
 
 /**
  * Created by Admin on 28.03.2015.
@@ -16,6 +18,8 @@ public class SendMail implements Runnable{
     private int guessedNumber;
     private double time;
     private String toEmail;
+
+    private static final Logger LOGGER = Logger.getLogger( SendMail.class.getName() );
 
 
     public SendMail(int numberOfTries, int guessedNumber, double time, String toEmail ){
@@ -65,8 +69,7 @@ public class SendMail implements Runnable{
             System.out.println("gmail done, email sent ok");
 
         } catch (Exception e) {
-            System.out.println("There are some troubles while sending emails ...");
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "There are some troubles while sending emails ...", e);
         }
     }
 

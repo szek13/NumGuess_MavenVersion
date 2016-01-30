@@ -93,7 +93,7 @@ public class NumGeneratorBusinessLogic {
 
             // see if I am the best
             HallOfFame minHall= hallOfFameList.getMinScore();
-            if(minHall.getScore()==counter_guess_stop)
+            if(Double.compare(minHall.getScore(),counter_guess_stop)==0) // the right way to compare floating point numbers
             {
                 // I am the new winner
                 System.out.println("I am the new winner, the minimal score:"+minHall.getScore());
