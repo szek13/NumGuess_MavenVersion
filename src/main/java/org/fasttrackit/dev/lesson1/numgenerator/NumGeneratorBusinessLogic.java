@@ -23,7 +23,7 @@ public class NumGeneratorBusinessLogic {
     private static final Logger LOGGER = Logger.getLogger( NumGeneratorBusinessLogic.class.getName() );
 
 
-    private static final int MAX_NUMBER = 6;
+    private static final int MAX_NUMBER = 10;
 
     private boolean isFirstTime = true;
     private boolean successfulGuess;
@@ -35,15 +35,18 @@ public class NumGeneratorBusinessLogic {
     private double counterGuessStop;
     private boolean isMinimalScore;
 
-    public double getCounterGuessStop() {
-        return counterGuessStop;
-    }
-    public boolean isMinimalScore() {
-        return isMinimalScore;
-    }
     public NumGeneratorBusinessLogic(){
         resetNumberGenerator();
     }
+
+    public double getCounterGuessStop() {
+        return counterGuessStop;
+    }
+
+    public boolean isMinimalScore() {
+        return isMinimalScore;
+    }
+
     public boolean getSuccessfulGuess(){
         return successfulGuess;
     }

@@ -40,7 +40,7 @@ public class SendMail implements Runnable{
         LOGGER.log(Level.FINE,"calling gmail...start...");
         final String username = System.getenv("GM_U");
         final String password = System.getenv("GM_P");
-        System.out.println("u/p="+username+"/"+password);
+        LOGGER.log(Level.FINE,"user/pass="+username+"/"+password);
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
