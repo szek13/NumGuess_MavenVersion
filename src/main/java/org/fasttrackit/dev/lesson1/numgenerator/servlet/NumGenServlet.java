@@ -105,7 +105,7 @@ public class NumGenServlet extends HttpServlet {
         try {
             pr = response.getWriter();
         } catch (IOException e) {
-            LOGGER.log(Level.SEVERE, "There are some troubles while sending emails ...", e);
+            LOGGER.log(Level.SEVERE, "there is an IO problem writing to client side", e);
 
         }
         assert pr != null;

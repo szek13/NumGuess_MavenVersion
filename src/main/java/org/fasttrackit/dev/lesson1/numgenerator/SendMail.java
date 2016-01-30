@@ -34,10 +34,10 @@ public class SendMail implements Runnable{
         t.start();
     }
 
+    @Override
     public void run(){
 
-
-        System.out.println("calling gmail...start...");
+        LOGGER.log(Level.FINE,"calling gmail...start...");
         final String username = System.getenv("GM_U");
         final String password = System.getenv("GM_P");
         System.out.println("u/p="+username+"/"+password);
@@ -58,7 +58,6 @@ public class SendMail implements Runnable{
         try {
 
             Message message = new MimeMessage(session);
-            //message.setFrom(new InternetAddress("ionel.condor@gmail.com"));
             message.setRecipients(Message.RecipientType.TO,
                     InternetAddress.parse(toEmail));
             message.setSubject("Num-guess");
@@ -66,7 +65,8 @@ public class SendMail implements Runnable{
 
             Transport.send(message);
 
-            System.out.println("gmail done, email sent ok");
+
+            LOGGER.log(Level.FINE,"gmail done, email sent ok");
 
         } catch (Exception e) {
             LOGGER.log(Level.SEVERE, "There are some troubles while sending emails ...", e);

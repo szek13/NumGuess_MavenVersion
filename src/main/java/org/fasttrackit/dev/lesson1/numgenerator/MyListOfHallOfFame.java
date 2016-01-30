@@ -41,31 +41,31 @@ public class MyListOfHallOfFame {
         }
 
     public HallOfFame getMinScore() {
-        double min=100;
-        long id=0;
+        double min=Double.MAX_VALUE;
+        long lid=0;
         for (ListIterator<HallOfFame> iter = hallOfFames.listIterator(); iter.hasNext(); ) {
             HallOfFame element = iter.next();
 
             if (element.getScore()<min) {
                 min=element.getScore();
-                id=element.getId();
+                lid=element.getId();
             }
         }
-        printList();
-        return new HallOfFame(id,min);
+        //printList();
+        return new HallOfFame(lid,min);
     }
 
 
-    public void printList() {
-        for (ListIterator<HallOfFame> iter = hallOfFames.listIterator(); iter.hasNext(); ) {
-            HallOfFame element = iter.next();
-
-                System.out.print(element.getId() + ":");
-                System.out.println(element.getScore());
-
-
-        }
-    }
+//    public void printList() {
+//        for (ListIterator<HallOfFame> iter = hallOfFames.listIterator(); iter.hasNext(); ) {
+//            HallOfFame element = iter.next();
+//
+//                System.out.print(element.getId() + ":");
+//                System.out.println(element.getScore());
+//
+//
+//        }
+//    }
 
     public List getList() {
         return hallOfFames;

@@ -1,5 +1,8 @@
 package org.fasttrackit.dev.lesson1.numgenerator;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * Created by condor on 29/11/14.
  * FastTrackIT, 2015
@@ -15,6 +18,10 @@ FastTrackIT 2015
 */
 
 public class NumGeneratorBusinessLogic {
+
+
+    private static final Logger LOGGER = Logger.getLogger( NumGeneratorBusinessLogic.class.getName() );
+
 
     private static final int MAX_NUMBER = 6;
 
@@ -97,17 +104,17 @@ public class NumGeneratorBusinessLogic {
             {
                 // I am the new winner
                 System.out.println("I am the new winner, the minimal score:"+minHall.getScore());
+                LOGGER.log(Level.FINER, "I am the new winner, the minimal score:"+minHall.getScore());
                 isMinimalScore=true;
 
             }
 
 
             // send mail all the time
-            System.out.println("sending email business logic");
+            LOGGER.log(Level.FINE,"start - sending email business logic");
             SendMail sm = new SendMail(numberOfGuesses, guessNumber, counter_guess_stop, "ionel_condor@yahoo.com");
             sm.sendEmail();
-
-            System.out.println("end sending email business logic.");
+            LOGGER.log(Level.FINE,"stop - sending email business logic");
 
 
         } else if (guessNumber < generatedNumber) {
