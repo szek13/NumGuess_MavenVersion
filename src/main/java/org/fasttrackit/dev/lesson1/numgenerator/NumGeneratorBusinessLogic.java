@@ -77,7 +77,8 @@ public class NumGeneratorBusinessLogic {
     public boolean determineGuess(int guessNumber){
         if (isFirstTime) {
             generatedNumber = NumGenerator.generate(MAX_NUMBER);
-            System.out.println("gennr:"+generatedNumber);
+           // System.out.println("gennr:"+generatedNumber);
+            LOGGER.log(Level.FINE,"generated number:"+generatedNumber);
             isFirstTime = false;
 
             // start counter_guess
