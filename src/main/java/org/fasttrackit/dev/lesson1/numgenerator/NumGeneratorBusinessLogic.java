@@ -32,36 +32,27 @@ public class NumGeneratorBusinessLogic {
     private String hint;
 
     private long counterGuessStart;
+    private double counterGuessStop;
+    private boolean isMinimalScore;
 
     public double getCounterGuessStop() {
         return counterGuessStop;
     }
-
-    private double counterGuessStop;
-
-
     public boolean isMinimalScore() {
         return isMinimalScore;
     }
-
-    private boolean isMinimalScore;
-
     public NumGeneratorBusinessLogic(){
         resetNumberGenerator();
     }
-
     public boolean getSuccessfulGuess(){
         return successfulGuess;
     }
-
     public String getHint(){
         return hint;
     }
-
     public int getNumGuesses(){
         return numberOfGuesses;
     }
-
     public boolean isFirstTime(){
         return isFirstTime;
     }
