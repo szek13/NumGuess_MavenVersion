@@ -28,8 +28,8 @@ public class NumGenServletTest {
         NumGeneratorBusinessLogic nbl = new NumGeneratorBusinessLogic();
 
 
-        String result = NumGenServlet.buildJSonObject(nbl,"1");
-        assertEquals(result,"{\"keySuccess\":\"" + true + "\", \"keyHint\":\"" + ""+ "\", \"keyCounter\":\"" + "0.0" + "\", \"isMinimalScore\":\"" + true +"\", \"keyNrGuesses\":\"" + 1 + "\"}");
+        String result = NumGenServlet.buildJSonObject(nbl,"11");
+        assertEquals(result,"{\"keySuccess\":\"" + false + "\", \"keyHint\":\"" + "lower"+ "\", \"keyCounter\":\"" + "0.0" + "\", \"isMinimalScore\":\"" + false +"\", \"keyNrGuesses\":\"" + 1 + "\"}");
 
 
     }
