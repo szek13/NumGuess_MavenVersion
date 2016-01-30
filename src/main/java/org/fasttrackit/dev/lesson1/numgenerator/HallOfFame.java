@@ -6,6 +6,9 @@ package org.fasttrackit.dev.lesson1.numgenerator;
  */
 public class HallOfFame {
 
+    private long id;
+    private double score;
+
     HallOfFame(long id, double value) {
         this.id=id;
         this.score=value;
@@ -27,7 +30,6 @@ public class HallOfFame {
         this.score = score;
     }
 
-    private long id;
-    private double score;
+
 
 }
