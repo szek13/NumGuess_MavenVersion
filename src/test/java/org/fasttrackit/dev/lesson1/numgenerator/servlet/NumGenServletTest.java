@@ -29,7 +29,7 @@ public class NumGenServletTest {
 
 
         String result = NumGenServlet.buildJSonObject(nbl,"1");
-        assertEquals(result,"{\"keySuccess\":\"" + false + "\", \"keyHint\":\"" + "higher"+ "\", \"keyCounter\":\"" + "0.0" + "\", \"isMinimalScore\":\"" + false +"\", \"keyNrGuesses\":\"" + 1 + "\"}");
+        assertEquals(result,"{\"keySuccess\":\"" + true + "\", \"keyHint\":\"" + ""+ "\", \"keyCounter\":\"" + "0.0" + "\", \"isMinimalScore\":\"" + true +"\", \"keyNrGuesses\":\"" + 1 + "\"}");
 
 
     }
