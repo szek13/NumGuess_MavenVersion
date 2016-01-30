@@ -83,10 +83,8 @@ public class NumGenServlet extends HttpServlet {
                 String hint = nbl.getHint();
                 int nrGuesses = nbl.getNumGuesses();
                 boolean isMinimalScore=nbl.isMinimalScore();
-               // jsonResponse = "{\"keySuccess\":\"" + success + "\", \"keyHint\":\"" + hint + "\", \"keyNrGuesses\":\"" + nrGuesses + "\"}";
-               // jsonResponse = "{\"keySuccess\":\"" + success + "\", \"keyHint\":\"" + hint+ "\", \"keyCounter\":\"" + nbl.getCounter_guess_stop() + "\", \"keyNrGuesses\":\"" + nrGuesses + "\"}";
 
-                jsonResponse = "{\"keySuccess\":\"" + success + "\", \"keyHint\":\"" + hint+ "\", \"keyCounter\":\"" + nbl.getCounter_guess_stop() + "\", \"isMinimalScore\":\"" + nbl.isMinimalScore() +"\", \"keyNrGuesses\":\"" + nrGuesses + "\"}";
+                jsonResponse = "{\"keySuccess\":\"" + success + "\", \"keyHint\":\"" + hint+ "\", \"keyCounter\":\"" + nbl.getCounter_guess_stop() + "\", \"isMinimalScore\":\"" + isMinimalScore +"\", \"keyNrGuesses\":\"" + nrGuesses + "\"}";
 
 
             } else {
@@ -98,7 +96,6 @@ public class NumGenServlet extends HttpServlet {
         }
     }
 
-    /**/
     private void returnJsonResponse(HttpServletResponse response, String jsonResponse) {
         response.setContentType("application/json");
         PrintWriter pr = null;

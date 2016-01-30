@@ -51,21 +51,23 @@ public class MyListOfHallOfFame {
                 lid=element.getId();
             }
         }
-        //printList();
+        /* printList(); */
         return new HallOfFame(lid,min);
     }
 
 
-//    public void printList() {
-//        for (ListIterator<HallOfFame> iter = hallOfFames.listIterator(); iter.hasNext(); ) {
-//            HallOfFame element = iter.next();
-//
-//                System.out.print(element.getId() + ":");
-//                System.out.println(element.getScore());
-//
-//
-//        }
-//    }
+/*
+public void printList() {
+for (ListIterator<HallOfFame> iter = hallOfFames.listIterator(); iter.hasNext(); ) {
+HallOfFame element = iter.next();
+
+System.out.print(element.getId() + ":");
+System.out.println(element.getScore());
+
+
+}
+}
+*/
 
     public List getList() {
         return hallOfFames;

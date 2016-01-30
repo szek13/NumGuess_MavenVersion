@@ -90,20 +90,21 @@ public class NumGeneratorBusinessLogic {
             successfulGuess = true;
             counter_guess_stop=(System.currentTimeMillis()-counter_guess_start)/1000.0;
 
-            // to do for increment 3
-            // write this in a singleton
-            // see if this is the best result
-            // print smething if I am the best so far
+            /*
+             to do for increment 3
+             write this in a singleton
+             see if this is the best result
+             print smething if I am the best so far
+             */
 
             MyListOfHallOfFame hallOfFameList = MyListOfHallOfFame.getInstance();
             hallOfFameList.addItem(counter_guess_stop);
 
-            // see if I am the best
+            /* see if I am the best */
             HallOfFame minHall= hallOfFameList.getMinScore();
             if(Double.compare(minHall.getScore(),counter_guess_stop)==0) // the right way to compare floating point numbers
             {
-                // I am the new winner
-                System.out.println("I am the new winner, the minimal score:"+minHall.getScore());
+                /* I am the new winner */
                 LOGGER.log(Level.FINER, "I am the new winner, the minimal score:"+minHall.getScore());
                 isMinimalScore=true;
 
