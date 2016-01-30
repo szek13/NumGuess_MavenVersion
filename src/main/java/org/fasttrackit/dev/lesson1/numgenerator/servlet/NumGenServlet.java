@@ -70,30 +70,37 @@ public class NumGenServlet extends HttpServlet {
         } else {
 
             String requestGuessNumber = request.getParameter(REQUEST_PARAM_GUESSNUMBER);
-            int iGuessNumber = 0;
-            boolean isANumber = true;
-            try {
-                iGuessNumber = Integer.parseInt(requestGuessNumber);
-            } catch (NumberFormatException e) {
-                isANumber = false;
-            }
-
-            if (isANumber) {
-                boolean success = nbl.determineGuess(iGuessNumber);
-                String hint = nbl.getHint();
-                int nrGuesses = nbl.getNumGuesses();
-                boolean isMinimalScore=nbl.isMinimalScore();
-
-                jsonResponse = "{\"keySuccess\":\"" + success + "\", \"keyHint\":\"" + hint+ "\", \"keyCounter\":\"" + nbl.getCounterGuessStop() + "\", \"isMinimalScore\":\"" + isMinimalScore +"\", \"keyNrGuesses\":\"" + nrGuesses + "\"}";
-
-
-            } else {
-                jsonResponse = "{\"keyError\":\"WRONGNUMBERFORMAT\"}";
-            }
+            jsonResponse = buildJSonObject(nbl, requestGuessNumber);
 
             returnJsonResponse(response, jsonResponse);
 
         }
+    }
+
+    /* extracted for testability reasons */
+    public static String buildJSonObject(NumGeneratorBusinessLogic nbl, String requestGuessNumber) {
+        String jsonResponse;
+        int iGuessNumber = 0;
+        boolean isANumber = true;
+        try {
+            iGuessNumber = Integer.parseInt(requestGuessNumber);
+        } catch (NumberFormatException e) {
+            isANumber = false;
+        }
+
+        if (isANumber) {
+            boolean success = nbl.determineGuess(iGuessNumber);
+            String hint = nbl.getHint();
+            int nrGuesses = nbl.getNumGuesses();
+            boolean isMinimalScore=nbl.isMinimalScore();
+
+            jsonResponse = "{\"keySuccess\":\"" + success + "\", \"keyHint\":\"" + hint+ "\", \"keyCounter\":\"" + nbl.getCounterGuessStop() + "\", \"isMinimalScore\":\"" + isMinimalScore +"\", \"keyNrGuesses\":\"" + nrGuesses + "\"}";
+
+
+        } else {
+            jsonResponse = "{\"keyError\":\"WRONGNUMBERFORMAT\"}";
+        }
+        return jsonResponse;
     }
 
     private void returnJsonResponse(HttpServletResponse response, String jsonResponse) {
