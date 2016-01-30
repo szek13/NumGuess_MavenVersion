@@ -84,7 +84,7 @@ public class NumGenServlet extends HttpServlet {
                 int nrGuesses = nbl.getNumGuesses();
                 boolean isMinimalScore=nbl.isMinimalScore();
 
-                jsonResponse = "{\"keySuccess\":\"" + success + "\", \"keyHint\":\"" + hint+ "\", \"keyCounter\":\"" + nbl.getCounter_guess_stop() + "\", \"isMinimalScore\":\"" + isMinimalScore +"\", \"keyNrGuesses\":\"" + nrGuesses + "\"}";
+                jsonResponse = "{\"keySuccess\":\"" + success + "\", \"keyHint\":\"" + hint+ "\", \"keyCounter\":\"" + nbl.getCounterGuessStop() + "\", \"isMinimalScore\":\"" + isMinimalScore +"\", \"keyNrGuesses\":\"" + nrGuesses + "\"}";
 
 
             } else {

@@ -31,13 +31,13 @@ public class NumGeneratorBusinessLogic {
     private int generatedNumber;
     private String hint;
 
-    private long counter_guess_start;
+    private long counterGuessStart;
 
-    public double getCounter_guess_stop() {
-        return counter_guess_stop;
+    public double getCounterGuessStop() {
+        return counterGuessStop;
     }
 
-    private double counter_guess_stop;
+    private double counterGuessStop;
 
 
     public boolean isMinimalScore() {
@@ -70,26 +70,25 @@ public class NumGeneratorBusinessLogic {
         isFirstTime = true;
         numberOfGuesses = 0;
         hint = "";
-        counter_guess_start=0L;
+        counterGuessStart =0L;
         isMinimalScore=false;
     }
 
     public boolean determineGuess(int guessNumber){
         if (isFirstTime) {
             generatedNumber = NumGenerator.generate(MAX_NUMBER);
-           // System.out.println("gennr:"+generatedNumber);
             LOGGER.log(Level.FINE,"generated number:"+generatedNumber);
             isFirstTime = false;
 
             // start counter_guess
-            counter_guess_start=System.currentTimeMillis();
+            counterGuessStart =System.currentTimeMillis();
 
         }
         numberOfGuesses++;
         if (guessNumber == generatedNumber) {
             hint="";
             successfulGuess = true;
-            counter_guess_stop=(System.currentTimeMillis()-counter_guess_start)/1000.0;
+            counterGuessStop =(System.currentTimeMillis()- counterGuessStart)/1000.0;
 
             /*
              to do for increment 3
@@ -99,11 +98,11 @@ public class NumGeneratorBusinessLogic {
              */
 
             MyListOfHallOfFame hallOfFameList = MyListOfHallOfFame.getInstance();
-            hallOfFameList.addItem(counter_guess_stop);
+            hallOfFameList.addItem(counterGuessStop);
 
             /* see if I am the best */
             HallOfFame minHall= hallOfFameList.getMinScore();
-            if(Double.compare(minHall.getScore(),counter_guess_stop)==0) // the right way to compare floating point numbers
+            if(Double.compare(minHall.getScore(), counterGuessStop)==0) // the right way to compare floating point numbers
             {
                 /* I am the new winner */
                 LOGGER.log(Level.FINER, "I am the new winner, the minimal score:"+minHall.getScore());
@@ -114,7 +113,7 @@ public class NumGeneratorBusinessLogic {
 
             // send mail all the time
             LOGGER.log(Level.FINE,"start - sending email business logic");
-            SendMail sm = new SendMail(numberOfGuesses, guessNumber, counter_guess_stop, "ionel_condor@yahoo.com");
+            SendMail sm = new SendMail(numberOfGuesses, guessNumber, counterGuessStop, "ionel_condor@yahoo.com");
             sm.sendEmail();
             LOGGER.log(Level.FINE,"stop - sending email business logic");
 
