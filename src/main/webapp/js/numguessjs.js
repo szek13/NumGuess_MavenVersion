@@ -1,6 +1,6 @@
        function reset(){
             document.getElementById("serverResponse").innerText="";
-            var xmlHttp = new XMLHttpRequest();
+             xmlHttp = new XMLHttpRequest();
             xmlHttp.onreadystatechange=callback;
             var url ="NumGenServlet"+"?requestRestartGame=1";
             xmlHttp.open("GET",url,true);
@@ -8,7 +8,7 @@
         }
 
          function guess(){
-             var xmlHttp = new XMLHttpRequest();
+              xmlHttp = new XMLHttpRequest();
              xmlHttp.onreadystatechange=callback;
              var url ="NumGenServlet"+"?requestGuessNumber="+document.getElementById("number").value;
              xmlHttp.open("GET",url,true);
@@ -16,7 +16,7 @@
          }
 
         function guessLink(givenValue) {
-            var xmlHttp = new XMLHttpRequest();
+            xmlHttp = new XMLHttpRequest();
             xmlHttp.onreadystatechange=callback;
             var url ="NumGenServlet"+"?requestGuessNumber="+givenValue;
             xmlHttp.open("GET",url,true);
