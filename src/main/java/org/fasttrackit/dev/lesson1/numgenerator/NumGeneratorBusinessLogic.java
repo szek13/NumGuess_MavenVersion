@@ -16,9 +16,7 @@ FastTrackIT 2015
 
 public class NumGeneratorBusinessLogic {
 
-    public static int getMaxNumber() {
-        return MAX_NUMBER;
-    }
+
 
     private static final int MAX_NUMBER = 2;
 

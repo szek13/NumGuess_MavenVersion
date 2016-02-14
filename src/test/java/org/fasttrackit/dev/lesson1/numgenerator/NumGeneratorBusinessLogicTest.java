@@ -78,10 +78,10 @@ public class NumGeneratorBusinessLogicTest {
         assertTrue(firstTime);
     }
 
-    @Test
-    public void testMaxNumber() throws Exception {
-
-        int maxNr = NumGeneratorBusinessLogic.getMaxNumber();
-        assertEquals(maxNr,2);
-    }
+//    @Test
+//    public void testMaxNumber() throws Exception {
+//
+//        int maxNr = NumGeneratorBusinessLogic.getMaxNumber();
+//        assertEquals(maxNr,2);
+//    }
 }
