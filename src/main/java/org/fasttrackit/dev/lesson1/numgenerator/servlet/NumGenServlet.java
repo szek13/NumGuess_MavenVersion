@@ -33,7 +33,6 @@ public class NumGenServlet extends HttpServlet {
     private static final String SESSION_KEY_NUMBER_GENERATOR_BUSINESS_LOGIC = "_sessionKey_NumberGeneratorBusinessLogic";
     private static final String VALUE_INIT = "1";
 
-    //private static final Logger LOGGER = Logger.getLogger( NumGenServlet.class.getName() );
 
 
     public void service(HttpServletRequest request, HttpServletResponse response) {
@@ -99,8 +98,6 @@ public class NumGenServlet extends HttpServlet {
             pr = response.getWriter();
         } catch (IOException e) {
             e.printStackTrace();
-           // LOGGER.log(Level.SEVERE, "there is an IO problem writing to client side", e);
-
         }
         assert pr != null;
         pr.write(jsonResponse);
