@@ -77,4 +77,11 @@ public class NumGeneratorBusinessLogicTest {
         boolean firstTime = nbr.isFirstTime();
         assertTrue(firstTime);
     }
+
+    @Test
+    public void testMaxNumber() throws Exception {
+
+        int maxNr = NumGeneratorBusinessLogic.getMaxNumber();
+        assertEquals(maxNr,10);
+    }
 }
