@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by condor on 29/11/14.
@@ -31,7 +33,7 @@ public class NumGenServlet extends HttpServlet {
     private static final String SESSION_KEY_NUMBER_GENERATOR_BUSINESS_LOGIC = "_sessionKey_NumberGeneratorBusinessLogic";
     private static final String VALUE_INIT = "1";
 
-    //json
+    private static final Logger LOGGER = Logger.getLogger( NumGenServlet.class.getName() );
 
 
     public void service(HttpServletRequest request, HttpServletResponse response) {
@@ -96,7 +98,9 @@ public class NumGenServlet extends HttpServlet {
         try {
             pr = response.getWriter();
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "there is an IO problem writing to client side", e);
+
         }
         assert pr != null;
         pr.write(jsonResponse);
