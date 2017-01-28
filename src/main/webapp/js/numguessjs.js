@@ -41,6 +41,8 @@
                 var keySuccess = jSonMessage.keySuccess;
                  var keyHint = jSonMessage.keyHint;
                  var keyNrGuesses = jSonMessage.keyNrGuesses;
+                 var diff = jSonMessage.keyDiff;
+
 
                  if(keySuccess=="false") {
                      if (keyHint == "higher")
@@ -52,6 +54,7 @@
                  if(keySuccess=="true")
                  {
                      document.getElementById("serverResponse").innerHTML = "Congrats, you guessed the number " + document.getElementById("number").value + " after " + keyNrGuesses + " guesses.";
+                     document.getElementById("time").innerHTML = "You guessed after: " + diff + " seconds";
                  }
              }
          }

@@ -26,6 +26,14 @@ public class NumGeneratorBusinessLogic {
     private int generatedNumber;
     private String hint;
 
+    private long startT;
+    private double diff;
+
+    public double getDiff(){
+        return diff;
+    }
+
+
     public NumGeneratorBusinessLogic(){
         resetNumberGenerator();
     }
@@ -54,14 +62,26 @@ public class NumGeneratorBusinessLogic {
 
     public boolean determineGuess(int guessNumber){
         if (isFirstTime) {
+
+
             generatedNumber = NumGenerator.generate(MAX_NUMBER);
             System.out.println("gennr:"+generatedNumber);
             isFirstTime = false;
+
+            startT = System.currentTimeMillis();
         }
         numberOfGuesses++;
         if (guessNumber == generatedNumber) {
+
             hint="";
             successfulGuess = true;
+
+            long stopT = System.currentTimeMillis();
+
+             diff = (stopT - startT)/1000.0;
+
+            System.out.println("Diferenta este: " + diff);
+
         } else if (guessNumber < generatedNumber) {
             hint = "higher";
             successfulGuess = false;

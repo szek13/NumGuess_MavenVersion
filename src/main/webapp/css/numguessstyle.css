@@ -85,6 +85,17 @@ h1 {
 
 }
 
+#time {
+    color:red;
+    position: absolute;
+    top: 250px;
+    left: 140px;
+    width: 200px;
+    background-color: floralwhite;
+    color: blue;
+    padding-left: .8em;
+}
+
 
 
 
