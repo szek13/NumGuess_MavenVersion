@@ -80,7 +80,7 @@ public class NumGenServlet extends HttpServlet {
                 String hint = nbl.getHint();
                 double diff = nbl.getDiff();
                 int nrGuesses = nbl.getNumGuesses();
-                jsonResponse = "{\"keySuccess\":\"" + success + "\", \"keyHint\":\"" + hint + "\",\"keyDiff\":\"" + diff + "\", \"keyNrGuesses\":\"" + nrGuesses + "\"}";
+                jsonResponse = "{\"keySuccess\":\"" + success + "\", \"keyHint\":\"" + hint + "\", \"keyDiff\":\"" + diff + "\", \"keyNrGuesses\":\"" + nrGuesses + "\"}";
 
             } else {
                 jsonResponse = "{\"keyError\":\"WRONGNUMBERFORMAT\"}";

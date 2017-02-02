@@ -20,18 +20,16 @@ public class NumGeneratorBusinessLogic {
 
     private static final int MAX_NUMBER = 10;
 
+    private long startT;
+    private double diff;
     private boolean isFirstTime = true;
     private boolean successfulGuess;
     private int numberOfGuesses;
     private int generatedNumber;
     private String hint;
 
-    private long startT;
-    private double diff;
 
-    public double getDiff(){
-        return diff;
-    }
+
 
 
     public NumGeneratorBusinessLogic(){
@@ -49,6 +47,8 @@ public class NumGeneratorBusinessLogic {
     public int getNumGuesses(){
         return numberOfGuesses;
     }
+
+    public double getDiff(){ return diff;}
 
     public boolean isFirstTime(){
         return isFirstTime;
@@ -69,18 +69,17 @@ public class NumGeneratorBusinessLogic {
             isFirstTime = false;
 
             startT = System.currentTimeMillis();
+
         }
         numberOfGuesses++;
         if (guessNumber == generatedNumber) {
 
+            long stopT = System.currentTimeMillis();
+            diff = (stopT - startT) / 1000.0;
+
             hint="";
             successfulGuess = true;
 
-            long stopT = System.currentTimeMillis();
-
-             diff = (stopT - startT)/1000.0;
-
-            System.out.println("Diferenta este: " + diff);
 
         } else if (guessNumber < generatedNumber) {
             hint = "higher";

@@ -53,8 +53,8 @@
                  else
                  if(keySuccess=="true")
                  {
-                     document.getElementById("serverResponse").innerHTML = "Congrats, you guessed the number " + document.getElementById("number").value + " after " + keyNrGuesses + " guesses.";
-                     document.getElementById("time").innerHTML = "You guessed after: " + diff + " seconds";
+                     document.getElementById("serverResponse").innerHTML = "Congrats, you guessed " + document.getElementById("number").value + " after " + keyNrGuesses + " guesses.";
+                     document.getElementById("time").innerHTML = "Your time is: " + diff + "seconds";
                  }
              }
          }
