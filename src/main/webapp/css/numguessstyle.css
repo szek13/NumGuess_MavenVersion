@@ -104,26 +104,28 @@ background-color: aliceblue;
 }
 
 #serverResponse {
-    color:red;
     position: absolute;
+    text-align: center;
     top: 210px;
     left: 550px;
-    width: 200px;
-    background-color: floralwhite;
-    color: blue;
+    width: 300px;
+    background-color: whitesmoke;
+    color: black;
     padding-left: .8em;
+    border-radius: 5px;
 
 }
 
 #time {
-    color:red;
     position: absolute;
-    top: 250px;
+    text-align: center;
+    top: 270px;
     left: 550px;
-    width: 200px;
-    background-color: floralwhite;
-    color: blue;
+    width: 300px;
+    background-color: whitesmoke;
+    color: black;
     padding-left: .8em;
+    border-radius: 5px;
 }
 
 
