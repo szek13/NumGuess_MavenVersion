@@ -1,5 +1,6 @@
        function reset(){
             document.getElementById("serverResponse").innerText="";
+           document.getElementById("time").innerText="";
             xmlHttp = new XMLHttpRequest();
             xmlHttp.onreadystatechange=callback;
             var url ="NumGenServlet"+"?requestRestartGame=1";
@@ -54,7 +55,7 @@
                  if(keySuccess=="true")
                  {
                      document.getElementById("serverResponse").innerHTML = "Congrats, you guessed the number " + document.getElementById("number").value + " after " + keyNrGuesses + " guesses.";
-                     document.getElementById("time").innerHTML = "Your time is: " + diff + "seconds";
+                     document.getElementById("time").innerHTML = "Your time is: " + diff + " seconds";
                  }
              }
          }

@@ -78,9 +78,9 @@ public class NumGenServlet extends HttpServlet {
             if (isANumber) {
                 boolean success = nbl.determineGuess(iGuessNumber);
                 String hint = nbl.getHint();
-                double diff = nbl.getDiff();
+                double difference = nbl.getDiff();
                 int nrGuesses = nbl.getNumGuesses();
-                jsonResponse = "{\"keySuccess\":\"" + success + "\", \"keyHint\":\"" + hint + "\", \"keyDiff\":\"" + diff + "\", \"keyNrGuesses\":\"" + nrGuesses + "\"}";
+                jsonResponse = "{\"keySuccess\":\"" + success + "\", \"keyHint\":\"" + hint + "\", \"keyDiff\":\"" + difference + "\", \"keyNrGuesses\":\"" + nrGuesses + "\"}";
 
             } else {
                 jsonResponse = "{\"keyError\":\"WRONGNUMBERFORMAT\"}";
